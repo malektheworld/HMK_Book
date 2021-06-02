@@ -12,6 +12,7 @@
     <title>Admin</title>
 
     <!-- Bootstrap Core CSS -->
+    <script src="https://kit.fontawesome.com/c2f55a738c.js" crossorigin="anonymous"></script>
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
 
     <link href="{{asset('css/libs.css')}}" rel="stylesheet">
