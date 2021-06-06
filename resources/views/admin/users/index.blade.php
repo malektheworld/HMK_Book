@@ -5,6 +5,11 @@
 
 @section('content')
 
+@if (Session::has('deleted_user'))
+
+      <h5 class="bg-danger" >{{session('deleted_user')}}</h5>
+  
+@endif
 <h1>Users </h1>
 
 
@@ -21,6 +26,7 @@
         <th scope="col">Created</th>
         <th scope="col">Updated</th>
         <th scope="col">Edit</th>
+        <th scope="col">Delete</th>
         
 
 
@@ -48,7 +54,9 @@
 
         <td>{{$user->created_at->diffForHumans()}}</td>
         <td>{{$user->updated_at->diffForHumans()}}</td>
-        <td> <a href="{{route('admin.users.edit', $user->id)}}"><i class="fas fa-user-edit"></i></a> </td>
+        <td> <a href="{{route('admin.users.edit', $user->id)}}"><i class="fas fa-user-edit"></i> Edit </a> </td>
+        <td> <a style="color: red" href="{{route('admin.users.destroy', $user->id)}}"><i class="fas fa-user-times"></i> Delete </a> </td>
+
 
       </tr>
 
