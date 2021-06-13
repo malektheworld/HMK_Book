@@ -36,16 +36,16 @@
       <tr>
         <td>{{$post->id}}</td>
         <td>{{$post->user->name}}</td>
-        <td>{{$post->category_id}}</td>
+        <td>{{$post->category ? $post->category->name : 'uncategorized'}}</td>
         <td> <img src="{{ asset( $post->photo ? $post->photo->file : 'https://via.placeholder.com/300/09f/fff.png' ) }}" alt="" height="50px" width="50px" class="" > </td>
         <td>{{$post->title}}</td>
-        <td>{{$post->body}}</td>
+        <td>{{str_limit($post->body, 10  )}}</td>
      
 
         <td>{{$post->created_at->diffForHumans()}}</td>
         <td>{{$post->updated_at->diffForHumans()}}</td>
-        <td> <a href="{{route('admin.posts.edit', $post->id)}}"><i class="fas fa-user-edit"></i> Edit </a> </td>
-        <td> <a style="color: red" href="{{route('admin.posts.destroy', $post->id)}}"><i class="fas fa-user-times"></i> Delete </a> </td>
+        <td> <a href="{{route('admin.posts.edit', $post->id)}}"><i class="fas fa-user-edit"></i>  </a> </td>
+        <td> <a style="color: rgb(233, 5, 5)" href="{{route('admin.posts.destroy', $post->id)}}"><i class="fas fa-user-times"></i>  </a> </td>
 
 
       </tr>

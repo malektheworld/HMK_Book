@@ -21,7 +21,7 @@
 
 <div class="form-group">
     {!! Form::label('category_id' , 'Role') !!}
-{!! Form::select('category_id' , [1 =>'PHP',2=>'JS',3=>'WebDev'] , null , ['class'=>'form-control']) !!}
+{!! Form::select('category_id' , [''=>'Choose Category'] + $categories , null , ['class'=>'form-control']) !!}
 
 </div>
 
