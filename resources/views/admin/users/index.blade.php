@@ -55,7 +55,17 @@
         <td>{{$user->created_at->diffForHumans()}}</td>
         <td>{{$user->updated_at->diffForHumans()}}</td>
         <td> <a href="{{route('admin.users.edit', $user->id)}}"><i class="fas fa-user-edit"></i> Edit </a> </td>
-        <td> <a style="color: red" href="{{route('admin.users.destroy', $user->id)}}"><i class="fas fa-user-times"></i> Delete </a> </td>
+        <td>
+          {!! Form::open( ['method'=>'DELETE' , 'action' => ['AdminUsersController@destroy', $user->id ]   ]) !!}
+
+          <div class="form-groub row">
+            <button type="submit" class="btn-danger btn-xs">
+              <i class="fas fa-user-times"></i> </button>
+          </div>
+           {!! Form::close()  !!}
+          
+          
+          
 
 
       </tr>

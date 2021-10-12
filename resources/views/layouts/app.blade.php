@@ -22,7 +22,49 @@
 
         .fa-btn {
             margin-right: 6px;
+            
         }
+
+        .btn1 {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    margin: 5px 0;
+    opacity: 0.85;
+    display: inline-block;
+    font-size: 17px;
+    line-height: 20px;
+    text-decoration: none ;
+    text-align: center ;
+    /* remove underline from anchors */
+}
+
+input:hover,
+.btn1:hover {
+    opacity: 1;
+}
+
+
+/* add appropriate colors to fb, twitter and google buttons */
+
+.fb {
+    background-color: #3B5998;
+    color: white;
+    text-decoration: none;
+
+}
+
+
+
+.google {
+    background-color: #dd4b39;
+    color: white;
+    text-decoration: none;
+
+}
+
+
     </style>
 </head>
 <body id="app-layout">
@@ -67,9 +109,13 @@
                             </ul>
                         </li>
                     @endif
+                   
+                    
+                    
                 </ul>
             </div>
         </div>
+        
     </nav>
 
     @yield('content')
@@ -77,6 +123,5 @@
     <!-- JavaScripts -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" integrity="sha384-I6F5OKECLVtK/BL+8iSLDEHowSAfUo76ZL9+kGAgTRdiByINKJaqTPH/QVNS1VDb" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    {{-- <script src="{{ elixir('js/app.js') }}"></script> --}}
 </body>
 </html>

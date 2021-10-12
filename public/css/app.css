@@ -2,4 +2,12 @@
   padding-top: 0px;
 }
 
+#nested_comment {
+  margin-top: 60px !important;
+}
+
+#comment-reply {
+  display: none;
+}
+
 /*# sourceMappingURL=app.css.map */

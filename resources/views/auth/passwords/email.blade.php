@@ -1,13 +1,23 @@
-@extends('layouts.app')
+@extends('layouts.blog-home')
+
+<style>
+    .center {
+  margin: auto;
+  width: 50%;
+  padding: 10px;
+  
+}
+</style>
+
 
 <!-- Main Content -->
 @section('content')
-<div class="container">
+<div class="container" style="margin-bottom: 500px;">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
-                <div class="panel-body">
+        <div class="col-md-8 center">
+            <div class="card">
+                <div class="card-header">Reset Password</div>
+                <div class="card-body">
                     @if (session('status'))
                         <div class="alert alert-success">
                             {{ session('status') }}

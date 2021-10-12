@@ -36,7 +36,7 @@ class AdminUsersController extends Controller
     {
 
 
-        $roles = Role::lists('name' , 'id')->all() ;
+        $roles = Role::pluck('name' , 'id')->all() ;
 
 
         //
@@ -97,7 +97,7 @@ class AdminUsersController extends Controller
     public function edit($id)
     {
         $user = User::findOrFail($id) ; 
-        $roles = Role::lists('name' , 'id')->all() ; 
+        $roles = Role::pluck('name' , 'id')->all() ; 
 
 
         return view('admin.users.edit' , compact('user', 'roles')) ; 

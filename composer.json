@@ -5,14 +5,26 @@
     "license": "MIT",
     "type": "project",
     "require": {
-        "php": ">=5.5.9",
-        "laravel/framework": "5.2.*",
-        "laravelcollective/html": "^5.2.0"
+        "php": ">=7.2.1",
+        "laravel/framework": "6.0.*",
+        "illuminate/support": "6.0.*",
+        "illuminate/config": "6.0.*",
+        "laravelcollective/html": "6.0.*",
+        "cviebrock/eloquent-sluggable": "6.0.*",
+        "unisharp/laravel-filemanager": "1.6",
+        "intervention/image": "^2.6",
+        "laravel/socialite": "~5.0",
+        "mcamara/laravel-localization": "1.4",
+        "laravel/helpers": "^1.4",
+        "laravel/scout": "^8.6",
+        "algolia/algoliasearch-client-php": "2.2",
+        "guzzlehttp/guzzle": "^7.3",
+        "wildbit/swiftmailer-postmark": "^3.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
         "mockery/mockery": "0.9.*",
-        "phpunit/phpunit": "~4.0",
+        "phpunit/phpunit": "~6.0",
         "symfony/css-selector": "2.8.*|3.0.*",
         "symfony/dom-crawler": "2.8.*|3.0.*"
     },
@@ -37,12 +49,10 @@
             "php artisan key:generate"
         ],
         "post-install-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postInstall",
-            "php artisan optimize"
+            "Illuminate\\Foundation\\ComposerScripts::postInstall"
         ],
         "post-update-cmd": [
-            "Illuminate\\Foundation\\ComposerScripts::postUpdate",
-            "php artisan optimize"
+            "Illuminate\\Foundation\\ComposerScripts::postUpdate"
         ]
     },
     "config": {

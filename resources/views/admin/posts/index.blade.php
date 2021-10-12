@@ -17,11 +17,14 @@
         <th scope="col">Category</th>
         <th scope="col">Photo</th>
         <th scope="col">title</th>
-        <th scope="col">body</th>
         <th scope="col">Created</th>
         <th scope="col">Updated</th>
         <th scope="col">Edit</th>
         <th scope="col">Delete</th>
+        <th scope="col">View Post</th>
+        <th scope="col">Comments</th>
+
+
         
 
 
@@ -39,14 +42,27 @@
         <td>{{$post->category ? $post->category->name : 'uncategorized'}}</td>
         <td> <img src="{{ asset( $post->photo ? $post->photo->file : 'https://via.placeholder.com/300/09f/fff.png' ) }}" alt="" height="50px" width="50px" class="" > </td>
         <td>{{$post->title}}</td>
-        <td>{{str_limit($post->body, 10  )}}</td>
      
 
         <td>{{$post->created_at->diffForHumans()}}</td>
         <td>{{$post->updated_at->diffForHumans()}}</td>
-        <td> <a href="{{route('admin.posts.edit', $post->id)}}"><i class="fas fa-user-edit"></i>  </a> </td>
-        <td> <a style="color: rgb(233, 5, 5)" href="{{route('admin.posts.destroy', $post->id)}}"><i class="fas fa-user-times"></i>  </a> </td>
+        <td> <a href="{{route('admin.posts.edit', $post->id)}}"><i class="fas fa-edit"></i>  </a> </td>
+        <td> 
+          {!! Form::open( ['method'=>'DELETE' , 'action' => ['AdminPostsController@destroy', $post->id ]   ]) !!}
 
+          <div class="form-groub row">
+            <button type="submit" class="btn-danger btn-xs">
+           <i class="fas fa-trash-alt" ></i> </button>
+          </div>
+           {!! Form::close()  !!}
+          
+        
+        </td>
+
+        <td><a href="{{route('home.post',$post->id)}}"> <i class="fas fa-eye"></i>  </a> </td>
+
+
+        <td><a href="{{route('admin.comments.show', $post->id)}}">  <i class="fas fa-eye"></i>  </a> </td>
 
       </tr>
 
@@ -56,6 +72,13 @@
       
     </tbody>
   </table>
+
+  <div class="row">
+
+      <div class="col-sm-6 col-sm-offset-5">
+          {{$posts->render()}}
+      </div>
+  </div>
 
 
 

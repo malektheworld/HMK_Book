@@ -34,6 +34,7 @@
                     </div>
 
     </div>
+    {!! Form::close()  !!}
         <div class="col-sm-6">
             @if ($categories)
                 
@@ -55,7 +56,16 @@
                     <td>{{$category->name}}</td>
                     <td>{{$category->created_at}}</td>
                     <td> <a href="{{route('admin.categories.edit', $category->id)}}"><i class="fas fa-edit"></i> </a> </td>
-                    <td> <a style="color: rgb(233, 5, 5)" href="{{route('admin.categories.destroy', $category->id)}}"><i class="fas fa-trash-alt"></i>  </a> </td>
+
+                    <td> 
+                      {!! Form::open( ['method'=>'DELETE' , 'action' => ['AdminCategoriesController@destroy', $category->id ]   ]) !!}
+
+                      <div class="form-groub row">
+                        <button type="submit" class="btn-danger btn-xs">
+                       <i class="fas fa-trash-alt" ></i> </button>
+                      </div>
+                       {!! Form::close()  !!}
+                   </td>
 
                   </tr>
                   @endforeach

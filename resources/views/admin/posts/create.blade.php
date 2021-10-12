@@ -7,6 +7,7 @@
 
 
 @section('content')
+@include('includes.tinyeditor')
 <h1>Craete Posts</h1>
 
 
@@ -35,7 +36,7 @@
 
 <div class="form-group">
     {!! Form::label('body' , 'Description') !!}
-    {!! Form::textarea('body' , null , ['class'=>'form-control', 'row'=>3]) !!}
+    {!! Form::textarea('body' , null , ['class'=>'form-control', 'row'=>3 , 'id'=>'mytextarea']) !!}
 
 </div>
 
